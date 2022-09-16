@@ -1,0 +1,138 @@
+@preset-name: 'Resume Builder';
+@preset-icon: concrete-icon(white, var(--twine), var(--cod_gray));
+@preset-fonts-file: 'build/fonts/defaults.less';
+
+// Standard measurements
+@ft-screen-width: 1366;
+@ft-body: 17;  /*17px on screen-width*/
+@ft-body-min: 0.8125rem;
+@ft-body-max: 2rem;
+@ft-body-vw: @ft-body / @ft-screen-width * 100vw;
+
+@ft-lh-body: 1.5;  /*1.5px on screen-width*/
+@ft-lh-body-min: 1.4;
+@ft-lh-body-max: 1.8;
+@ft-lh-body-vw: @ft-lh-body / @ft-screen-width * 100vw;
+
+
+@desktop-min-width: 992px; // this is the min width for the desktop layout to work. should correspond to the col breakpoints
+
+.sizeVar(@name, @max, @min) {
+  @range: 100vw / (@desktop-min-width / @max);
+  --ft-size-@{name}: ~"clamp(@{min}px, @{range}, @{max}px)";
+}
+.lhVar(@name, @max, @min) {
+  @range: 100vw / (@desktop-min-width / @max);
+  --ft-lh-@{name}: ~"clamp(@{min}px, @{range}, @{max}px)";
+}
+
+.boxSizeVar(@name, @max, @min) {
+    @range: 100vw / (@desktop-min-width / @max);
+    --box-size-@{name}: ~"clamp(@{min}px, @{range}, @{max}px)";
+}
+
+:root {
+  --ft-size-base: 16px;
+
+  --concrete-edit-panel-height: 48px;
+
+  // Font families
+  --font-family-catamaran: 'Catamaran', 'Helvetica Neue', Helvetica, Roboto,
+    Arial, sans-serif;
+
+  // Font weights
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+
+  // Theme Colors
+  --cod_gray: #141413;
+  --limed_spruce: #36444d;
+  --ship_gray: #3e3740;
+  --dove_gray: #707070;
+  --silver_chalice: #aaaaaa;
+  --twine: #ca9f63;
+  --alto: #d3d3d3;
+  --brandy: #dabc92;
+  --pampas: #f2f0eb;
+  --light_gray: rgba(255, 255, 255, 0.29);
+
+  --ft-font-family: var(--font-family-catamaran);
+  --ft-size-body: ~"clamp(@{ft-body-min}, @{ft-body-vw}, @{ft-body-max})";
+  --ft-lh-body: ~"clamp(@{ft-lh-body-min}, @{ft-lh-body-vw}, @{ft-lh-body-max})";
+
+  .sizeVar(h1, 55, 31);
+  .lhVar(h1, 63, 33);
+  --ft-color-h1: var(--cod_gray);
+  --ft-weight-h1: var(--font-weight-light);
+
+  .sizeVar(h2, 34, 26);
+  .lhVar(h2, 44, 31);
+  --ft-color-h2: var(--twine);
+  --ft-weight-h2: var(--font-weight-semi-bold);
+
+  .sizeVar(h3, 24, 22);
+  .lhVar(h3, 32, 28);
+  --ft-color-h3: var(--cod_gray);
+  --ft-weight-h3: var(--font-weight-semi-bold);
+
+  .sizeVar(h4, 20, 18);
+  .lhVar(h4, 23, 20);
+  --ft-color-h4: var(--twine);
+  --ft-weight-h4: var(--font-weight-medium);
+
+  .sizeVar(h5, 16, 14);
+  .lhVar(h5, 19, 16);
+  --ft-color-h5: var(--cod_gray);
+
+  .sizeVar(h6, 14, 12);
+  .lhVar(h6, 16, 14);
+  --ft-color-h6: var(--twine);
+
+  .sizeVar(p, 16, 15.5);
+  .lhVar(p, 24, 20);
+  --ft-color-p: var(--cod_gray);
+  --ft-color-a: var(--twine);
+  --ft-color-a-hover: var(--cod_gray);
+  --ft-color-input: var(--cod_gray);
+
+  .sizeVar(teaser, 24, 18);
+  .lhVar(teaser, 31, 22);
+  --ft-color-teaser: var(--silver_chalice);
+
+  .sizeVar(big, 65, 36);
+  .lhVar(big, 75, 38);
+
+  .sizeVar(small, 14, 10);
+  .lhVar(small, 16, 12);
+
+  .sizeVar(fancy-caption, 24, 22);
+  .lhVar(fancy-caption, 34, 28);
+  --ft-color-fancy-caption: white;
+  --ft-weight-fancy-caption: var(--font-weight-light);
+
+  .sizeVar(button, 24, 22);
+  .lhVar(button, 30, 25);
+  --ft-color-button: var(--twine);
+  --ft-weight-button: var(--font-weight-semi-bold);
+
+  .sizeVar(icon-form-checkbox, 25, 20);
+
+  --space: 1.875em;
+
+  // Z-indexes
+  --lowest-z-index: 1;
+  --zindex-carousel: 100;
+  --zindex-overlay: 200;
+  --zindex-dropdown: 700;
+  --zindex-home-menu: 710;
+  --zindex-sticky-nav: 720;
+  --zindex-fixed: 730;
+  --zindex-modal-backdrop: 740;
+  --zindex-modal: 750;
+  --zindex-popover: 760;
+  --zindex-tooltip: 770;
+  --zindex-loader: 780;
+}

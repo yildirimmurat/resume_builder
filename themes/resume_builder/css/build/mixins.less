@@ -1,0 +1,40 @@
+.resume-container,
+.resume-container-narrow {
+  --container-width-mobile: 83vw;
+  --container-width-md: 70vw;
+}
+
+.resume-container {
+  --container-max-width: 1176px;
+  --container-width: 86vw;
+
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  max-width: var(--container-max-width);
+  width: var(--container-width);
+
+  @media (max-width: @screen-md-max) {
+    width: var(--container-width-md);
+  }
+  @media (max-width: @screen-sm-max) {
+    width: var(--container-width-mobile);
+  }
+}
+
+.resume-container-narrow {
+  --narrow-container-width: 57vw;
+
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  max-width: var(--narrow-containber-max-width);
+  width: var(--narrow-container-width);
+
+  @media (max-width: @screen-md-max) {
+    width: var(--container-width-md);
+  }
+  @media (max-width: @screen-sm-max) {
+    width: var(--container-width-mobile);
+  }
+}

@@ -1,0 +1,28 @@
+/* Import our theme variables. */
+@import "presets/defaults.less";
+
+/* Our style rules - namespace so as not to collide with the core app styles */
+@import "build/variables.less";
+@import "build/global.less";
+@import "build/loader.less";
+
+.ccm-page {
+  @import "build/reset.less";
+  header,
+  main,
+  footer {
+    @import ~"@{preset-fonts-file}";
+    @import (multiple) "build/typography.less";
+  }
+  @import "build/content.less";
+  @import "build/footer.less";
+  @import "build/header.less";
+  @import "build/mixins.less";
+
+
+}
+
+.cke,
+.cke_panel_container {
+  @import (multiple) "build/typography.less";
+}
