@@ -5,10 +5,12 @@ use Concrete\Core\Area\Area;
 echo $this->inc('elements/header.php');
 ?>
 <main>
-    <?php
-    $a = new Area('Main');
-    $a->display($c);
-    ?>
+    <div class="resume-container">
+        <?php
+        $a = new Area('Main');
+        $a->display($c);
+        ?>
+    </div>
 </main>
 <?php
 echo $this->inc('elements/footer.php');
